@@ -45,6 +45,7 @@ module.exports = {
             }
         ],
         'prettier/prettier': 'error',
+        'jsx-a11y/label-has-associated-control': 'off',
         'arrow-body-style': 'off',
         'prefer-arrow-callback': 'off',
         // prettier插件配置

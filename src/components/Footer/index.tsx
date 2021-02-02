@@ -3,7 +3,7 @@ import TodoList from '../TodoList'
 import { ClearCompleted, Count, CompleteTodo, DeleteTodo, Todo } from '../types'
 import './index.css'
 
-interface TodoListProps {
+interface Props {
     clearCompleted: ClearCompleted
     completeTodo: CompleteTodo
     deleteTodo: DeleteTodo
@@ -11,13 +11,7 @@ interface TodoListProps {
     count: Count
 }
 
-const Footer: React.FC<TodoListProps> = ({
-    todos,
-    clearCompleted,
-    completeTodo,
-    deleteTodo,
-    count
-}) => {
+const Footer: React.FC<Props> = ({ todos, clearCompleted, completeTodo, deleteTodo, count }) => {
     const [choose, setChoose] = useState(1)
     return (
         <div>
