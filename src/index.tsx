@@ -1,19 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Layout } from 'antd'
 import Todo from './components/Todo'
-
-const { Sider, Content } = Layout
+import Siderbar from './components/Sidebar'
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Layout className="layout">
-            <Sider className="sider">ECMAScript 6</Sider>
-            <Content>
-                <Todo />
-            </Content>
-        </Layout>
-    </React.StrictMode>,
+    // <Layout className="layout">
+    //     <Sider className="sider">
+    //         <Siderbar />
+    //     </Sider>
+    //     <Content>
+    //         <Todo />
+    //     </Content>
+    // </Layout>,
+    <div className="layout">
+        <Siderbar />
+        <Todo />
+    </div>,
     document.getElementById('root')
 )

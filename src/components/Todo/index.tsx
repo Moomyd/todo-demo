@@ -61,16 +61,52 @@ const Todos: React.FC = () => {
         })
         setTodos(newTodos)
     }
+    function areAllComplete() {
+        let flag = true
+        todos.map((todo) => {
+            if (todo.complete === false) {
+                flag = false
+            }
+        })
+        if (flag) {
+            return true
+        }
+        return false
+    }
+    const completeAll = () => {
+        if (areAllComplete()) {
+            const newTodos = todos.map((todo) => {
+                return {
+                    ...todo,
+                    complete: false
+                }
+            })
+            setCount(todos.length)
+            setTodos(newTodos)
+        } else {
+            const newTodos = todos.map((todo) => {
+                return {
+                    ...todo,
+                    complete: true
+                }
+            })
+            setCount(0)
+            setTodos(newTodos)
+        }
+    }
     return (
         <div className="body">
             <AddTodoForm addTodo={addTodo} />
-            <Footer
-                todos={todos}
-                count={count}
-                completeTodo={completeTodo}
-                deleteTodo={deleteTodo}
-                clearCompleted={clearCompleted}
-            />
+            {!!todos.length && (
+                <Footer
+                    todos={todos}
+                    count={count}
+                    completeTodo={completeTodo}
+                    deleteTodo={deleteTodo}
+                    clearCompleted={clearCompleted}
+                    completeAll={completeAll}
+                />
+            )}
         </div>
     )
 }

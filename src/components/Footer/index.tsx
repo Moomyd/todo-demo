@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import TodoList from '../TodoList'
-import { ClearCompleted, Count, CompleteTodo, DeleteTodo, Todo } from '../types'
+import { ClearCompleted, Count, CompleteTodo, DeleteTodo, Todo, CompleteAll } from '../types'
 import './index.css'
 
 interface Props {
+    completeAll: CompleteAll
     clearCompleted: ClearCompleted
     completeTodo: CompleteTodo
     deleteTodo: DeleteTodo
@@ -11,18 +12,26 @@ interface Props {
     count: Count
 }
 
-const Footer: React.FC<Props> = ({ todos, clearCompleted, completeTodo, deleteTodo, count }) => {
+const Footer: React.FC<Props> = ({
+    todos,
+    clearCompleted,
+    completeTodo,
+    deleteTodo,
+    count,
+    completeAll
+}) => {
     const [choose, setChoose] = useState(1)
     return (
         <div>
             <TodoList
-                choose={choose}
+                completeAll={completeAll}
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
+                choose={choose}
                 todos={todos}
             />
             <div className="footer">
-                {count} item left
+                <span className="count">{count} item left</span>
                 <button onClick={() => setChoose(1)} type="button">
                     All
                 </button>

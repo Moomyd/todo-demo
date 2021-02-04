@@ -44,8 +44,13 @@ module.exports = {
                 tsx: 'never'
             }
         ],
+        'array-callback-return': 0,
+        'consistent-return': 0,
+        'jsx-a11y/click-events-have-key-events': 0,
+        'jsx-a11y/control-has-associated-label': 0,
+        'jsx-a11y/no-noninteractive-element-interactions': 0,
+        'jsx-a11y/label-has-associated-control': 0,
         'prettier/prettier': 'error',
-        'jsx-a11y/label-has-associated-control': 'off',
         'arrow-body-style': 'off',
         'prefer-arrow-callback': 'off',
         // prettier插件配置

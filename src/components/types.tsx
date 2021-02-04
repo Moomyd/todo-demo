@@ -7,4 +7,5 @@ type CompleteTodo = (selectedTodo: Todo) => void
 type AddTodo = (newTodo: string) => void
 type DeleteTodo = (oldTodo: Todo) => void
 type ClearCompleted = () => void
-export type { Todo, Count, CompleteTodo, AddTodo, DeleteTodo, ClearCompleted }
+type CompleteAll = () => void
+export type { Todo, Count, CompleteTodo, AddTodo, DeleteTodo, ClearCompleted, CompleteAll }
