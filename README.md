@@ -7,4 +7,4 @@
 * prettier
 
 ## 预览
-可以在 https://moomyd.github.io/ts-react–todolist/ 查看效果
+可以在 https://moomyd.github.io/ts-react-todolist  查看效果
